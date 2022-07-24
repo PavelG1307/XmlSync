@@ -1,6 +1,7 @@
 const { encode } = require('punycode');
 const builder = require('xmlbuilder');
 const fs = require('fs');
+const path = require('path')
 
 class XML_Controller{
 
@@ -172,7 +173,7 @@ class XML_Controller{
 
 
     async save(data, user_hash){
-        const filename = './xml_files/' + user_hash + '.xml'
+        const filename = path.resolve(__dirname, 'xml_files', user_hash + '.xml')
         fs.writeFile(filename, data, 'utf-8', ()=>{})
         return filename
     }

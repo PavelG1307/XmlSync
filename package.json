@@ -1,0 +1,26 @@
+{
+  "name": "autoload_avito",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavelG1307/autoload_avito.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavelG1307/autoload_avito/issues"
+  },
+  "homepage": "https://github.com/PavelG1307/autoload_avito#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "pg": "^8.7.3",
+    "xmlbuilder": "^15.1.1"
+  }
+}

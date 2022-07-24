@@ -1,6 +1,6 @@
 const { encode } = require('punycode');
 const builder = require('xmlbuilder');
-fs = require('fs');
+const fs = require('fs');
 
 class XML_Controller{
 
@@ -18,7 +18,6 @@ class XML_Controller{
 
 
     async add_ad_in_XML(ad, user_hash){
-        console.log(ad)
         const ad_xml = this.xmls.user_hash.ele('Ad')
         ad_xml.ele('Id',ad.uuid)
         const date = new Date(parseInt(ad.creation_timestamp))
@@ -136,11 +135,9 @@ class XML_Controller{
 
 
     async add(ad, xml, title, uuid, value){
-        console.log(ad.parents)
         for (const i in uuid){
             const n = ad.parents.indexOf(uuid[i])
             if (n!=-1) {
-                console.log(value[i])
                 xml.ele(title, value[i])
             }
         }
@@ -153,13 +150,19 @@ class XML_Controller{
 
 
     async refresh(user_hash){
-        const ads = await this.db.get_ads(user_hash)
-        await this.create_XML(user_hash)
-        for (const i in ads){
-            await this.add_ad_in_XML(ads[i], user_hash)
+        try{
+            const ads = await this.db.get_ads(user_hash)
+            await this.create_XML(user_hash)
+            for (const i in ads){
+                await this.add_ad_in_XML(ads[i], user_hash)
+            }
+            const xml = await this.get_XML(user_hash)
+            const file = await this.save(xml, user_hash)
+            return file
+        } catch(e){
+            console.log(e)
+            return false
         }
-        xml = await this.get_XML(user_hash)
-        await this.save(xml, user_hash)
     }
 
 
@@ -171,17 +174,68 @@ class XML_Controller{
     async save(data, user_hash){
         const filename = './xml_files/' + user_hash + '.xml'
         fs.writeFile(filename, data, 'utf-8', ()=>{})
+        return filename
     }
 
 
     async refresh_all(){
+        let error = false
         for (const i in this.users) {
-            const hash = await this.uuid_to_hash(this.users[i])
-            // const hash = 'e15c03dd62e73893ce49271974f9e9f4'
-            await this.refresh(hash)
+            if (!(await this.refresh(this.users[i]))) {
+                error = true
+            }
+        }
+        if (!error) {
+            return {'status': 'ok'}
+        } else {
+            return {'status': 'bad requests'}
+        }
+    }
+    
+    async add_user(hash){
+        this.users.push(hash)
+        if (await this.refresh(hash)) {
+            return {'status': 'ok'}
+        } else {
+            return {'status': 'bad requests'}
         }
     }
 
+    async update_all(){
+        if (await this.refresh_all()) {
+            return {'status':'ok'}
+        } else {
+            return {'status':'bad requests'}
+        }
+    }
+
+    async update_user(hash){
+        if (await this.refresh(hash)) {
+            return {'status': 'ok'}
+        } else {
+            return {'status': 'bad requests'}
+        }
+    }
+
+    async remove_user(hash){
+        try{
+            this.users.pop(this.users.indexOf(hash))
+            const filename = './xml_files/' + hash + '.xml'
+            fs.unlinkSync(filename)
+            return {'status':'ok'}
+        } catch(e) {
+            console.log(e)
+            return {'status':'bad requests'}
+        }
+    }
+
+    async get_all(){
+        const res = {'status':'ok', 'data': []}
+        for (const i in this.users) {
+            res.data.push(this.users[i])
+        }
+        return res
+    }
 }
 
 module.exports = XML_Controller

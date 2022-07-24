@@ -1,9 +1,33 @@
+const express = require('express')
+const app = express()
+const port = 80
+const xmlRouter = './routers/xml_routers.js'
 DB = require('./db_controller.js')
 XML = require('./xml_controller.js')
-
 db = new DB('default', 'auth', 'structures3', 'users2')
-// db.get_ads('706982af9002ca49cd47f62fa467a7ab')
-xml = new XML(['9d64e859-530f-4c29-b453-2ac00d29a114'], db)
-xml.refresh_all()
+xml = new XML([], db)
 
-// db.get_structures()
+app.listen(port, () => {
+  console.log(`listen port ${port}`)
+})
+
+app.use("/api/xml/update/:id", async function(req, res) {
+    if (req.params.id == 'all') {
+        res.send(await xml.update_all())
+    } else {
+        res.send(await xml.update_user(req.params.id))
+    }
+});
+
+app.use("/api/xml/add/:id", async function(req, res) {
+    res.send(await xml.add_user(req.params.id))
+});
+
+
+app.use("/api/xml/remove/:id", async function(req, res) {
+    res.send(await xml.remove_user(req.params.id))
+});
+
+app.use("/api/xml/get", async function(req, res) {
+    res.send(await xml.get_all())
+});

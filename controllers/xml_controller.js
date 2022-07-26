@@ -99,8 +99,6 @@ class XML_Controller{
         '30030a3c-3934-495d-8799-6807de1fe103',
         '479f4d74-8938-4c12-9e03-eed04a9d40e1']
 
-        const value = ['Бесплатная','Подходит для грузового транспорта']
-
         for (const i in class_uuid){
             const n = ad.parents.indexOf(class_uuid[i])
             if (n == 0){
@@ -173,7 +171,7 @@ class XML_Controller{
 
 
     async save(data, user_hash){
-        const filename = path.resolve(__dirname, 'xml_files', user_hash + '.xml')
+        const filename = './xml_files/' + user_hash + '.xml'
         fs.writeFile(filename, data, 'utf-8', ()=>{})
         return filename
     }
@@ -194,9 +192,13 @@ class XML_Controller{
     }
     
     async add_user(hash){
-        this.users.push(hash)
-        if (await this.refresh(hash)) {
-            return {'status': 'ok'}
+        if (this.users.indexOf(hash)==-1){
+            this.users.push(hash)
+            if (await this.refresh(hash)) {
+                return {'status': 'ok'}
+            } else {
+                return {'status': 'bad requests'}
+            }
         } else {
             return {'status': 'bad requests'}
         }

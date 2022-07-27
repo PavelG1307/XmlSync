@@ -53,7 +53,7 @@ class XML_Controller{
             console.log(ad['files'])
             console.log(images)
             const im_xml = ad_xml.ele('Images')
-            for (i in images) {
+            for (const i in images) {
                 im_xml.ele('Image', {'url': images[i]})
             }
         } catch(e) {

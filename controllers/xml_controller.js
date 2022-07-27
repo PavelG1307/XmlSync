@@ -50,6 +50,8 @@ class XML_Controller{
         
         try{
             const images = ad['files']['images']
+            console.log(ad['files'])
+            console.log(images)
             const im_xml = ad_xml.ele('Images')
             for (i in images) {
                 im_xml.ele('Image', {'url': images[i]})

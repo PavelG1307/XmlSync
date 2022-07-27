@@ -27,7 +27,7 @@ class XML_Controller{
         + "T" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + '+03:00'
 
         ad_xml.ele('DateBegin', date_begin)
-        const description = ad.description + '\nAvitoId: ' + ad.avito_id
+        const description = ad.description + '\nAvitoId:' + ad.avito_id
         ad_xml.ele('Description', description)
         ad_xml.ele('Address', ad.address)
         ad_xml.ele('Latitude', ad.coords[0])

@@ -3,7 +3,7 @@ const DB = require('../controllers/db_controller.js')
 const XML = require('../controllers/xml_controller.js')
 
 const xml_router = express.Router()
-const db = new DB('default', 'auth', 'structures3', 'users2')
+const db = new DB('default', 'auth', 'structures4', 'users2')
 const xml = new XML([], db)
 
 xml_router.get("/xml/update/:id", async function(req, res) {

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Ads formatVersion="3" target="Avito.ru">
+  <Ad>
+    <Id>904605c7-72a0-49ae-8365-58eefe118f57</Id>
+    <DateBegin>2022-7-28T3:26:2+03:00</DateBegin>
+    <Description>Склад с центре Москвы, 20 м кв. О подробностях расскажу в сообщениях
+AvitoId: 2518591917</Description>
+    <Address>Москва, Котляковская ул., 7/8</Address>
+    <Latitude>55.644761235711314</Latitude>
+    <Longitude>37.6393062619324</Longitude>
+    <Category>Коммерческая недвижимость</Category>
+    <OperationType>Сдам</OperationType>
+    <Title>Склад, 20 м²</Title>
+    <Price>30000</Price>
+    <PriceType>в месяц</PriceType>
+    <Square>20</Square>
+    <PropertyRights>Собственник</PropertyRights>
+    <ObjectType>Складское помещение</ObjectType>
+    <Decoration>Без отделки</Decoration>
+    <Floor>1</Floor>
+    <BuildingType>Другой</BuildingType>
+    <Entrance>С улицы</Entrance>
+    <ParkingType>На улице</ParkingType>
+    <CeilingHeight>2</CeilingHeight>
+    <LeaseDeposit>2</LeaseDeposit>
+  </Ad>
+  <Ad>
+    <Id>4e79be25-c82f-4054-95ea-2daaec7a5544</Id>
+    <DateBegin>2022-7-28T3:26:28+03:00</DateBegin>
+    <Description>Сдам морской контейнер
+AvitoId: 2518299472</Description>
+    <Address>Москва, Котляковская ул., 7/8</Address>
+    <Latitude>55.644831</Latitude>
+    <Longitude>37.639563</Longitude>
+    <Category>Коммерческая недвижимость</Category>
+    <OperationType>Сдам</OperationType>
+    <Title>Склад, 7 м²</Title>
+    <Price>20000</Price>
+    <PriceType>в месяц</PriceType>
+    <Square>7</Square>
+    <PropertyRights>Собственник</PropertyRights>
+    <ObjectType>Складское помещение</ObjectType>
+    <Decoration>Чистовая</Decoration>
+    <Floor>1</Floor>
+    <BuildingType>Административное здание</BuildingType>
+    <CeilingHeight>2</CeilingHeight>
+    <LeaseDeposit>1</LeaseDeposit>
+  </Ad>
+</Ads>

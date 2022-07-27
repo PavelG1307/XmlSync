@@ -46,6 +46,7 @@ class XML_Controller{
         ad_xml.ele('Square', ad.capacity)
         ad_xml.ele('PropertyRights', 'Собственник')
         ad_xml.ele('ObjectType', 'Складское помещение')
+        ad_xml.ele('RentalType', 'Прямая')
 
         await this.add(ad,ad_xml,'BuildingClass',
             ['e3b0f540-c512-429b-b0ea-b8fbdafe7cd1','4b2064d1-858d-4205-b3ca-8f88ecb86b13', 'ed08f23e-f88e-4607-8042-2ec32a09f0b6', 'c2f1deb1-be56-496a-a8b2-e1ea96471496'],
@@ -128,7 +129,7 @@ class XML_Controller{
         'c77e0eca-39fe-4ec3-bfd0-0fdd6b67ffd9',
         '390b4521-055f-41d1-b2c4-ab6a80e58990',
         '9da7bbe9-9c0a-4aab-8725-b5e80560e990'],
-        ['Без залога','0.5','1','1.5','2','3'])
+        ['Без залога','0,5  месяца','1 месяц','1,5 месяца','2 месяца','3 месяца'])
         
     }
 

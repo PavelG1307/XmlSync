@@ -56,8 +56,9 @@ class XML_Controller{
             for (i in images) {
                 im_xml.ele('Image', {'url': images[i]})
             }
-        } catch {
+        } catch(e) {
             console.log('No images')
+            console.log(e)
         }
 
         await this.add(ad,ad_xml,'BuildingClass',

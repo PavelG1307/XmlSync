@@ -35,7 +35,6 @@ class DB_Controller{
                 console.log(this.structures[res[i].parents] + ' --- ' + res[i].name + ' --- ' + res[i].uuid)
             }
         }
-        // console.log(res.rows)
     }
 
     async get_ads(user_hash) {

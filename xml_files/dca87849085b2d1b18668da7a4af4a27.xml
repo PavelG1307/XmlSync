@@ -4,7 +4,7 @@
     <Id>904605c7-72a0-49ae-8365-58eefe118f57</Id>
     <DateBegin>2022-7-28T3:26:2+03:00</DateBegin>
     <Description>Склад с центре Москвы, 20 м кв. О подробностях расскажу в сообщениях
-AvitoId: 2518591917</Description>
+AvitoId:2518591917</Description>
     <Address>Москва, Котляковская ул., 7/8</Address>
     <Latitude>55.644761235711314</Latitude>
     <Longitude>37.6393062619324</Longitude>
@@ -16,19 +16,21 @@ AvitoId: 2518591917</Description>
     <Square>20</Square>
     <PropertyRights>Собственник</PropertyRights>
     <ObjectType>Складское помещение</ObjectType>
+    <RentalType>Прямая</RentalType>
+    <Images/>
     <Decoration>Без отделки</Decoration>
     <Floor>1</Floor>
     <BuildingType>Другой</BuildingType>
     <Entrance>С улицы</Entrance>
     <ParkingType>На улице</ParkingType>
     <CeilingHeight>2</CeilingHeight>
-    <LeaseDeposit>2</LeaseDeposit>
+    <LeaseDeposit>2 месяца</LeaseDeposit>
   </Ad>
   <Ad>
     <Id>4e79be25-c82f-4054-95ea-2daaec7a5544</Id>
     <DateBegin>2022-7-28T3:26:28+03:00</DateBegin>
     <Description>Сдам морской контейнер
-AvitoId: 2518299472</Description>
+AvitoId:2518299472</Description>
     <Address>Москва, Котляковская ул., 7/8</Address>
     <Latitude>55.644831</Latitude>
     <Longitude>37.639563</Longitude>
@@ -40,10 +42,14 @@ AvitoId: 2518299472</Description>
     <Square>7</Square>
     <PropertyRights>Собственник</PropertyRights>
     <ObjectType>Складское помещение</ObjectType>
+    <RentalType>Прямая</RentalType>
+    <Images>
+      <Image url="https://92.img.avito.st/image/1/1.GUlvmLaytaBZLzetUdhESrM7tabPObc.d8LuE34WR3H2bGGQ4fJuw5ASlN4E9Uv1F9UFNB_tO8E"/>
+    </Images>
     <Decoration>Чистовая</Decoration>
     <Floor>1</Floor>
     <BuildingType>Административное здание</BuildingType>
     <CeilingHeight>2</CeilingHeight>
-    <LeaseDeposit>1</LeaseDeposit>
+    <LeaseDeposit>1 месяц</LeaseDeposit>
   </Ad>
 </Ads>
